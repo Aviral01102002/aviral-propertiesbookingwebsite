@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AVIRAL PROPERTYS | Dashboard</title> 
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <aside class="sidebar" id="sidebar">
+
+    <a href="#home" class="brand">
+      <span class="brand-logo" aria-hidden="true">A</span>
+      <span class="brand-copy">
+        <span class="brand-name">AVIRAL <b>PROPERTYS</b></span>
+        <small>PROPERTY MADE SIMPLE</small>
+      </span>
+    </a>
+
+    <div class="side-label">WORKSPACE</div>
+
+    <nav class="side-nav">
+      <a href="#home" class="side-link active" data-page="Dashboard">
+        <span class="nav-symbol" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m3 10 9-7 9 7"></path><path d="M5 9v12h14V9"></path><path d="M9 21v-7h6v7"></path>
+          </svg>
+        </span>
+        Dashboard
+      </a>
+
+      <a href="#properties" class="side-link" data-page="Properties">
+        <span class="nav-symbol" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="8" height="8" rx="1.5"></rect><rect x="13" y="3" width="8" height="8" rx="1.5"></rect><rect x="3" y="13" width="8" height="8" rx="1.5"></rect><rect x="13" y="13" width="8" height="8" rx="1.5"></rect>
+          </svg>
+        </span>
+        Properties
+        <span class="side-count" id="sidebarCount">4</span>
+      </a>
+
+      <a href="#saved" class="side-link" data-page="Saved Properties">
+        <span class="nav-symbol" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.8 8.7c0 5.2-8.8 10.2-8.8 10.2S3.2 13.9 3.2 8.7A4.7 4.7 0 0 1 12 6.1a4.7 4.7 0 0 1 8.8 2.6Z"></path>
+          </svg>
+        </span>
+        Saved properties
+      </a>
+
+      <a href="#services" class="side-link" data-page="Services">
+        <span class="nav-symbol" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3 21 12 12 21 3 12 12 3Z"></path><path d="m9 12 2 2 4-4"></path>
+          </svg>
+        </span>
+        Services
+      </a>
+
+      <a href="#contact" class="side-link" data-page="Enquiries">
+        <span class="nav-symbol" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m4 7 8 6 8-6"></path>
+          </svg>
+        </span>
+        Enquiries
+      </a>
+    </nav>
+
+    <div class="side-label">INFORMATION</div>
+
+    <nav class="side-nav">
+      <a href="#about" class="side-link" data-page="About Us">
+        <span class="nav-symbol" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 8h.01"></path>
+          </svg>
+        </span>
+        About us
+      </a>
+
+      <button class="side-link side-button" id="helpBtn" type="button">
+        <span class="nav-symbol" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"></circle><path d="M9.6 9a2.5 2.5 0 1 1 4.2 1.8c-1.1 1-1.8 1.3-1.8 2.7"></path><path d="M12 17h.01"></path>
+          </svg>
+        </span>
+        Help &amp; support
+      </button>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="help-card">
+        <span class="help-icon">✦</span>
+        <strong>Looking for a property?</strong>
+        <p>Let's find a space that fits your plans.</p>
+        <a href="#contact">Talk to our team ↗</a>
+      </div>
+
+      <div class="side-foot">
+        <span class="green-dot"></span>
+        Your next chapter starts here
+      </div>
+    </div>
+
+  </aside>
+
+  <main class="main-content">
+
+    <header class="topbar">
+
+      <div class="d-flex align-items-center gap-3">
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Open navigation"
+          type="button"
+        >☰</button>
+
+        <div class="breadcrumb">
+          <span class="breadcrumb-parent">Workspace</span>
+          <span class="breadcrumb-separator" aria-hidden="true">›</span>
+          <strong id="currentPage">Dashboard</strong>
+        </div>
+      </div>
+
+      <div class="top-actions">
+        <span class="top-date" id="todayLabel">Welcome back</span>
+
+        <button
+          class="btn btn-light btn-sm border"
+          id="notificationBtn"
+          type="button"
+          title="Notifications"
+          aria-label="Notifications"
+        >♧</button>
+
+        <div class="profile">
+          <span class="profile-icon">A</span>
+          <span>
+            <strong>Aviral Propertys</strong>
+            <small>Property advisor</small>
+          </span>
+        </div>
+      </div>
+
+    </header>
+
+    <div class="content" id="home">
+
+      <section class="welcome">
+        <div>
+          <div class="eyebrow">● &nbsp; YOUR PROPERTY SPACE</div>
+
+          <h1>
+            Find your place<br>
+            <em>in the world.</em>
+          </h1>
+
+          <p>
+            Explore homes, plots and commercial spaces with confidence.
+          </p>
+        </div>
+
+        <a href="#properties" class="primary-btn">
+          Explore properties <span>↗</span>
+        </a>
+      </section>
+
+      <section class="banner">
+        <div class="banner-content">
+          <span class="banner-kicker">A PLACE TO BEGIN</span>
+
+          <h2>
+            Good spaces.<br>
+            Better <em>beginnings.</em>
+          </h2>
+
+          <p>
+            From the first search to the final decision,
+            make your next move with confidence.
+          </p>
+
+          <a class="light-btn" href="#properties">
+            Find your property →
+          </a>
+        </div>
+      </section>
+
+      <section class="metrics">
+
+        <article class="metric">
+          <div class="metric-icon">⌂</div>
+          <div class="metric-label">Listed properties</div>
+          <div class="metric-number" id="totalMetric">4</div>
+          <div class="metric-note">Sample property listings</div>
+        </article>
+
+        <article class="metric">
+          <div class="metric-icon">♡</div>
+          <div class="metric-label">Saved properties</div>
+          <div class="metric-number" id="savedMetric">0</div>
+          <div class="metric-note">Your personal shortlist</div>
+        </article>
+
+        <article class="metric">
+          <div class="metric-icon">⌖</div>
+          <div class="metric-label">Locations covered</div>
+          <div class="metric-number">10</div>
+          <div class="metric-note">Lucknow areas covered</div>
+        </article>
+
+        <article class="metric">
+          <div class="metric-icon">✦</div>
+          <div class="metric-label">Ways we can help</div>
+          <div class="metric-number">03</div>
+          <div class="metric-note">Buy, sell or invest</div>
+        </article>
+
+      </section>
+
+      <section class="section" id="properties">
+
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">HANDPICKED FOR YOU</div>
+            <h2>Explore properties<span style="color:#c9a664">.</span></h2>
+            <p>Find a space that fits your next chapter.</p>
+          </div>
+
+          <a href="#contact" class="text-link">
+            Need help choosing? ↗
+          </a>
+        </div>
+
+        <div class="filter-panel">
+
+          <div class="filter-intro">
+            ⌕ &nbsp; Find your match
+            <small>Choose your preferences</small>
+          </div>
+
+          <div class="filter-field">
+            <label for="typeFilter">PROPERTY TYPE</label>
+
+            <select id="typeFilter" class="form-select">
+              <option value="all">All types</option>
+              <option value="Apartment">Apartment</option>
+              <option value="Villa">Villa</option>
+              <option value="Plot">Residential plot</option>
+              <option value="Commercial">Commercial</option>
+            </select>
+          </div>
+
+          <div class="filter-field">
+            <label for="budgetFilter">BUDGET</label>
+
+            <select id="budgetFilter" class="form-select">
+              <option value="all">Any budget</option>
+              <option value="50">Under ₹50 lakh</option>
+              <option value="100">₹50 lakh – ₹1 crore</option>
+              <option value="200">₹1 – ₹2 crore</option>
+              <option value="201">Above ₹2 crore</option>
+            </select>
+          </div>
+
+          <div class="filter-field">
+            <label for="locationFilter">LOCATION</label>
+
+            <select id="locationFilter" class="form-select">
+              <option value="all">All locations</option>
+              <option value="Gomti Nagar">Gomti Nagar</option>
+              <option value="Indira Nagar">Indira Nagar</option>
+              <option value="Shaheed Path">Shaheed Path</option>
+              <option value="Hazratganj">Hazratganj</option>
+              <option value="Aliganj">Aliganj</option>
+              <option value="Sushant Golf City">Sushant Golf City</option>
+              <option value="Mahanagar">Mahanagar</option>
+              <option value="Vrindavan Yojana">Vrindavan Yojana</option>
+              <option value="Alambagh">Alambagh</option>
+              <option value="Jankipuram">Jankipuram</option>
+            </select>
+          </div>
+
+          <button class="search-btn" id="searchBtn" type="button">
+            Search →
+          </button>
+
+        </div>
+
+        <div class="chips">
+          <button class="chip active" data-chip="all" type="button">
+            All properties
+          </button>
+
+          <button class="chip" data-chip="Apartment" type="button">
+            Apartments
+          </button>
+
+          <button class="chip" data-chip="Villa" type="button">
+            Villas
+          </button>
+
+          <button class="chip" data-chip="Plot" type="button">
+            Plots
+          </button>
+
+          <button class="chip" data-chip="Commercial" type="button">
+            Commercial
+          </button>
+
+          <span class="results-count" id="resultsCount">
+            4 properties
+          </span>
+        </div>
+
+        <div class="property-grid" id="propertyGrid">
+
+          <article
+            class="property-card"
+            data-id="p1"
+            data-type="Apartment"
+            data-price="85"
+            data-location="Gomti Nagar"
+          >
+            <div class="property-photo photo-one">
+              <span class="tag">FEATURED</span>
+
+              <button
+                class="favorite"
+                type="button"
+                aria-label="Save Skyline Residences"
+                aria-pressed="false"
+              >♡</button>
+
+              <span class="photo-location">LUCKNOW · GOMTI NAGAR</span>
+            </div>
+
+            <div class="property-details">
+              <div class="property-category">
+                APARTMENT <span>RESIDENTIAL</span>
+              </div>
+
+              <h3>Skyline Residences</h3>
+              <p class="property-address">Gomti Nagar, Lucknow</p>
+
+              <div class="specs">
+                <span>⌂ 3 beds</span>
+                <span>▱ 2 baths</span>
+                <span>▧ 1,650 sq.ft.</span>
+              </div>
+
+              <div class="property-footer">
+                <div class="price">
+                  ₹85 lakh
+                  <small>Demo price</small>
+                </div>
+
+                <button
+                  class="arrow-btn enquiry-btn"
+                  data-property="Skyline Residences"
+                  aria-label="Enquire Skyline Residences"
+                  type="button"
+                >↗</button>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="property-card"
+            data-id="p2"
+            data-type="Villa"
+            data-price="185"
+            data-location="Indira Nagar"
+          >
+            <div class="property-photo photo-two">
+              <span class="tag">NEW LISTING</span>
+
+              <button
+                class="favorite"
+                type="button"
+                aria-label="Save Courtyard Villa"
+                aria-pressed="false"
+              >♡</button>
+
+              <span class="photo-location">LUCKNOW · INDIRA NAGAR</span>
+            </div>
+
+            <div class="property-details">
+              <div class="property-category">
+                VILLA <span>PREMIUM LIVING</span>
+              </div>
+
+              <h3>The Courtyard Villa</h3>
+              <p class="property-address">Indira Nagar, Lucknow</p>
+
+              <div class="specs">
+                <span>⌂ 4 beds</span>
+                <span>▱ 3 baths</span>
+                <span>▧ 2,400 sq.ft.</span>
+              </div>
+
+              <div class="property-footer">
+                <div class="price">
+                  ₹1.85 crore
+                  <small>Demo price</small>
+                </div>
+
+                <button
+                  class="arrow-btn enquiry-btn"
+                  data-property="The Courtyard Villa"
+                  aria-label="Enquire Courtyard Villa"
+                  type="button"
+                >↗</button>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="property-card"
+            data-id="p3"
+            data-type="Plot"
+            data-price="42"
+            data-location="Shaheed Path"
+          >
+            <div class="property-photo photo-three">
+              <span class="tag">INVESTMENT PICK</span>
+
+              <button
+                class="favorite"
+                type="button"
+                aria-label="Save Greenfield Plots"
+                aria-pressed="false"
+              >♡</button>
+
+              <span class="photo-location">LUCKNOW · SHAHEED PATH</span>
+            </div>
+
+            <div class="property-details">
+              <div class="property-category">
+                RESIDENTIAL PLOT <span>BUILD YOUR WAY</span>
+              </div>
+
+              <h3>Greenfield Plots</h3>
+              <p class="property-address">Shaheed Path, Lucknow</p>
+
+              <div class="specs">
+                <span>▧ 1,200 sq.ft.</span>
+                <span>⌖ Planned sector</span>
+              </div>
+
+              <div class="property-footer">
+                <div class="price">
+                  ₹42 lakh
+                  <small>Demo price</small>
+                </div>
+
+                <button
+                  class="arrow-btn enquiry-btn"
+                  data-property="Greenfield Plots"
+                  aria-label="Enquire Greenfield Plots"
+                  type="button"
+                >↗</button>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="property-card"
+            data-id="p4"
+            data-type="Commercial"
+            data-price="125"
+            data-location="Hazratganj"
+          >
+            <div class="property-photo photo-four">
+              <span class="tag">BUSINESS SPACE</span>
+
+              <button
+                class="favorite"
+                type="button"
+                aria-label="Save Workline Business Hub"
+                aria-pressed="false"
+              >♡</button>
+
+              <span class="photo-location">LUCKNOW · HAZRATGANJ</span>
+            </div>
+
+            <div class="property-details">
+              <div class="property-category">
+                COMMERCIAL <span>OFFICE SPACE</span>
+              </div>
+
+              <h3>Workline Business Hub</h3>
+              <p class="property-address">Hazratganj, Lucknow</p>
+
+              <div class="specs">
+                <span>▧ 1,000 sq.ft.</span>
+                <span>⌖ Office space</span>
+              </div>
+
+              <div class="property-footer">
+                <div class="price">
+                  ₹1.25 crore
+                  <small>Demo price</small>
+                </div>
+
+                <button
+                  class="arrow-btn enquiry-btn"
+                  data-property="Workline Business Hub"
+                  aria-label="Enquire Workline Business Hub"
+                  type="button"
+                >↗</button>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="property-card"
+            data-id="p5"
+            data-type="Villa"
+            data-price="210"
+            data-location="Aliganj"
+          >
+            <div class="property-photo photo-five">
+              <span class="tag">FAMILY VILLA</span>
+              <button class="favorite" type="button" aria-label="Save Aliganj Garden Villa" aria-pressed="false">♡</button>
+              <span class="photo-location">LUCKNOW · ALIGANJ</span>
+            </div>
+            <div class="property-details">
+              <div class="property-category">VILLA <span>GARDEN HOME</span></div>
+              <h3>Aliganj Garden Villa</h3>
+              <p class="property-address">Aliganj, Lucknow</p>
+              <div class="specs"><span>⌂ 4 beds</span><span>▱ 4 baths</span><span>▧ 2,800 sq.ft.</span></div>
+              <div class="property-footer">
+                <div class="price">₹2.10 crore<small>Demo price</small></div>
+                <button class="arrow-btn enquiry-btn" data-property="Aliganj Garden Villa" aria-label="Enquire Aliganj Garden Villa" type="button">↗</button>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="property-card"
+            data-id="p6"
+            data-type="Villa"
+            data-price="165"
+            data-location="Sushant Golf City"
+          >
+            <div class="property-photo photo-six">
+              <span class="tag">GOLF CITY LIVING</span>
+              <button class="favorite" type="button" aria-label="Save Palm Court Villa" aria-pressed="false">♡</button>
+              <span class="photo-location">LUCKNOW · SUSHANT GOLF CITY</span>
+            </div>
+            <div class="property-details">
+              <div class="property-category">VILLA <span>GATED COMMUNITY</span></div>
+              <h3>Palm Court Villa</h3>
+              <p class="property-address">Sushant Golf City, Lucknow</p>
+              <div class="specs"><span>⌂ 3 beds</span><span>▱ 3 baths</span><span>▧ 2,100 sq.ft.</span></div>
+              <div class="property-footer">
+                <div class="price">₹1.65 crore<small>Demo price</small></div>
+                <button class="arrow-btn enquiry-btn" data-property="Palm Court Villa" aria-label="Enquire Palm Court Villa" type="button">↗</button>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="property-card"
+            data-id="p7"
+            data-type="Villa"
+            data-price="245"
+            data-location="Mahanagar"
+          >
+            <div class="property-photo photo-seven">
+              <span class="tag">PREMIUM VILLA</span>
+              <button class="favorite" type="button" aria-label="Save Mahanagar Heritage Villa" aria-pressed="false">♡</button>
+              <span class="photo-location">LUCKNOW · MAHANAGAR</span>
+            </div>
+            <div class="property-details">
+              <div class="property-category">VILLA <span>PREMIUM LIVING</span></div>
+              <h3>Mahanagar Heritage Villa</h3>
+              <p class="property-address">Mahanagar, Lucknow</p>
+              <div class="specs"><span>⌂ 5 beds</span><span>▱ 4 baths</span><span>▧ 3,200 sq.ft.</span></div>
+              <div class="property-footer">
+                <div class="price">₹2.45 crore<small>Demo price</small></div>
+                <button class="arrow-btn enquiry-btn" data-property="Mahanagar Heritage Villa" aria-label="Enquire Mahanagar Heritage Villa" type="button">↗</button>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="property-card"
+            data-id="p8"
+            data-type="Villa"
+            data-price="195"
+            data-location="Vrindavan Yojana"
+          >
+            <div class="property-photo photo-eight">
+              <span class="tag">NEW LISTING</span>
+              <button class="favorite" type="button" aria-label="Save Vrindavan Courtyard Villa" aria-pressed="false">♡</button>
+              <span class="photo-location">LUCKNOW · VRINDAVAN YOJANA</span>
+            </div>
+            <div class="property-details">
+              <div class="property-category">VILLA <span>MODERN HOME</span></div>
+              <h3>Vrindavan Courtyard Villa</h3>
+              <p class="property-address">Vrindavan Yojana, Lucknow</p>
+              <div class="specs"><span>⌂ 4 beds</span><span>▱ 3 baths</span><span>▧ 2,500 sq.ft.</span></div>
+              <div class="property-footer">
+                <div class="price">₹1.95 crore<small>Demo price</small></div>
+                <button class="arrow-btn enquiry-btn" data-property="Vrindavan Courtyard Villa" aria-label="Enquire Vrindavan Courtyard Villa" type="button">↗</button>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="property-card"
+            data-id="p9"
+            data-type="Apartment"
+            data-price="68"
+            data-location="Alambagh"
+          >
+            <div class="property-photo photo-nine">
+              <span class="tag">CITY APARTMENT</span>
+              <button class="favorite" type="button" aria-label="Save Alambagh Heights" aria-pressed="false">♡</button>
+              <span class="photo-location">LUCKNOW · ALAMBAGH</span>
+            </div>
+            <div class="property-details">
+              <div class="property-category">APARTMENT <span>RESIDENTIAL</span></div>
+              <h3>Alambagh Heights</h3>
+              <p class="property-address">Alambagh, Lucknow</p>
+              <div class="specs"><span>⌂ 3 beds</span><span>▱ 2 baths</span><span>▧ 1,400 sq.ft.</span></div>
+              <div class="property-footer">
+                <div class="price">₹68 lakh<small>Demo price</small></div>
+                <button class="arrow-btn enquiry-btn" data-property="Alambagh Heights" aria-label="Enquire Alambagh Heights" type="button">↗</button>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="property-card"
+            data-id="p10"
+            data-type="Plot"
+            data-price="38"
+            data-location="Jankipuram"
+          >
+            <div class="property-photo photo-ten">
+              <span class="tag">BUILD YOUR HOME</span>
+              <button class="favorite" type="button" aria-label="Save Jankipuram Green Plots" aria-pressed="false">♡</button>
+              <span class="photo-location">LUCKNOW · JANKIPURAM</span>
+            </div>
+            <div class="property-details">
+              <div class="property-category">RESIDENTIAL PLOT <span>BUILD YOUR WAY</span></div>
+              <h3>Jankipuram Green Plots</h3>
+              <p class="property-address">Jankipuram, Lucknow</p>
+              <div class="specs"><span>▧ 1,000 sq.ft.</span><span>⌖ Residential sector</span></div>
+              <div class="property-footer">
+                <div class="price">₹38 lakh<small>Demo price</small></div>
+                <button class="arrow-btn enquiry-btn" data-property="Jankipuram Green Plots" aria-label="Enquire Jankipuram Green Plots" type="button">↗</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div id="noResults" class="empty-state d-none">
+          <strong>No matching properties found.</strong>
+          <p>Try changing the filters.</p>
+
+          <button
+            id="clearFilters"
+            class="btn btn-outline-secondary btn-sm rounded-pill"
+            type="button"
+          >Clear filters</button>
+        </div>
+
+        <p class="disclaimer">
+          These are sample listings and prices. Verify all details before publishing.
+        </p>
+
+      </section>
+
+      <section class="section saved-section" id="saved">
+
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">YOUR SHORTLIST</div>
+            <h2>Saved properties.</h2>
+            <p>Use the heart button on a property to save it here.</p>
+          </div>
+
+          <span class="results-count" id="savedCount">0 saved</span>
+        </div>
+
+        <div class="saved-list" id="savedList">
+          <div class="saved-empty">
+            Your saved properties will appear here.
+          </div>
+        </div>
+
+      </section>
+
+      <section class="section" id="services">
+
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">HERE FOR YOUR NEXT MOVE</div>
+            <h2>How we can help.</h2>
+            <p>Support for every property decision.</p>
+          </div>
+        </div>
+
+        <div class="service-grid">
+
+          <article class="service-card">
+            <span class="number">01 / BUY</span>
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m3 10 9-7 9 7"></path>
+                <path d="M5 9v12h14V9"></path>
+                <path d="M9 21v-7h6v7"></path>
+              </svg>
+            </div>
+            <h3>Find your next home</h3>
+            <p>
+              Explore homes and plots based on your budget,
+              location and plans.
+            </p>
+            <a href="#contact">Start your search ↗</a>
+          </article>
+
+          <article class="service-card">
+            <span class="number">02 / SELL</span>
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m3 10 9-7 9 7"></path>
+                <path d="M5 9v12h9"></path>
+                <path d="M14 14h7v7"></path>
+                <path d="m21 14-9 9"></path>
+              </svg>
+            </div>
+            <h3>Sell with confidence</h3>
+            <p>
+              Tell us about your property and your selling goals.
+            </p>
+            <a href="#contact">Discuss your property ↗</a>
+          </article>
+
+          <article class="service-card">
+            <span class="number">03 / INVEST</span>
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 3v18h18"></path>
+                <path d="M7 14v3"></path>
+                <path d="M12 10v7"></path>
+                <path d="M17 6v11"></path>
+                <path d="m6 10 5-4 4 2 5-5"></path>
+                <path d="M16 3h4v4"></path>
+              </svg>
+            </div>
+            <h3>Plan your investment</h3>
+            <p>
+              Compare property types and locations before your next move.
+            </p>
+            <a href="#contact">Explore possibilities ↗</a>
+          </article>
+
+        </div>
+
+      </section>
+
+      <section class="about" id="about">
+
+        <div
+          class="about-image"
+          role="img"
+          aria-label="Modern home interior"
+        ></div>
+
+        <div>
+          <div class="eyebrow">ABOUT AVIRAL PROPERTYS</div>
+
+          <h2>
+            Property is more<br>
+            than <em>four walls.</em>
+          </h2>
+
+          <p>
+            It's a new beginning, a long-term plan, or a place for
+            your business to grow. Our goal is to make property
+            discovery clearer and easier.
+          </p>
+
+          <ul class="about-points">
+            <li><b>01</b> Listen to your needs and budget.</li>
+            <li><b>02</b> Shortlist suitable properties.</li>
+            <li><b>03</b> Guide you through the next steps.</li>
+          </ul>
+
+          <a class="primary-btn" href="#contact">
+            Talk to our team ↗
+          </a>
+        </div>
+
+      </section>
+
+      <section class="contact-section" id="contact">
+
+        <div class="contact-intro">
+          <div class="eyebrow" style="color:#dfc28c">
+            LET'S TALK PROPERTY
+          </div>
+
+          <h2>
+            Your next move<br>
+            starts with <em>a hello.</em>
+          </h2>
+
+          <p>
+            Tell us what you're looking for and prepare an enquiry.
+          </p>
+
+          <p>📍 &nbsp; Lucknow, Uttar Pradesh</p>
+
+          <p>
+            ✉ &nbsp; Replace the demo email with your business email.
+          </p>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+
+          <h3>Send an enquiry</h3>
+          <p class="text-secondary small mb-3">
+            Fields marked * are required.
+          </p>
+
+          <div class="row g-3">
+
+            <div class="col-sm-6">
+              <label for="name">Your name *</label>
+              <input
+                class="form-control"
+                id="name"
+                name="name"
+                required
+                placeholder="Your full name"
+              >
+            </div>
+
+            <div class="col-sm-6">
+              <label for="phone">Phone number *</label>
+              <input
+                class="form-control"
+                id="phone"
+                name="phone"
+                type="tel"
+                pattern="[0-9+() -]{8,18}"
+                required
+                placeholder="Your phone number"
+              >
+            </div>
+
+            <div class="col-12">
+              <label for="interest">I'm interested in</label>
+
+              <select class="form-select" id="interest" name="interest">
+                <option>Buying a property</option>
+                <option>Selling a property</option>
+                <option>Property investment</option>
+                <option>Other enquiry</option>
+              </select>
+            </div>
+
+            <div class="col-12">
+              <label for="message">Message</label>
+
+              <textarea
+                class="form-control"
+                id="message"
+                name="message"
+                rows="3"
+                placeholder="Preferred location, budget or property name"
+              ></textarea>
+            </div>
+
+            <div class="col-12">
+              <button class="primary-btn w-100" type="submit">
+                Prepare email enquiry ↗
+              </button>
+
+              <p class="form-note">
+                Demo form: it opens your email app; it does not save
+                enquiries online.
+              </p>
+
+              <div
+                id="formStatus"
+                class="form-status"
+                role="status"
+              ></div>
+            </div>
+
+          </div>
+        </form>
+
+      </section>
+
+      <footer class="footer">
+
+        <div class="footer-top">
+
+          <a href="#home" class="brand footer-brand">
+            <img
+              class="brand-image"
+              src="assets/aviral-propertys-logo.png"
+              alt="Aviral Property logo"
+            >
+          </a>
+
+          <p>Thoughtful spaces. Confident decisions.</p>
+
+          <a href="#home">Back to top ↑</a>
+
+        </div>
+
+        <div class="footer-bottom">
+          <span>© <span id="year"></span> Aviral Propertys</span>
+          <span>Demo website — verify property details before publishing.</span>
+        </div>
+
+      </footer>
+
+    </div>
+  </main>
+  
+  <div
+    class="toast-message"
+    id="toast"
+    role="status"
+    aria-live="polite"
+  ></div>
+  
+  <script src="script.js"></script>
+
+</body>
+</html>
